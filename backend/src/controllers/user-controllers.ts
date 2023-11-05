@@ -1,4 +1,3 @@
-
 import { NextFunction, Request, Response } from "express";
 import User from "../models/User.js";
 import { hash, compare } from "bcrypt";
@@ -78,7 +77,8 @@ export const userLogin = async (
     if (!isPasswordCorrect) {
       return res.status(403).send("Incorrect Password");
     }
-   // create token and store cookie
+
+    // create token and store cookie
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
