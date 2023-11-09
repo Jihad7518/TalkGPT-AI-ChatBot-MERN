@@ -1,4 +1,3 @@
-
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -23,7 +22,7 @@ const Header = () => {
                 text="Go To Chat"
                 textColor="black"
               />
- <NavigationLink
+              <NavigationLink
                 bg="#51538f"
                 textColor="white"
                 to="/"
@@ -52,3 +51,5 @@ const Header = () => {
     </AppBar>
   );
 };
+
+export default Header;
