@@ -23,3 +23,32 @@ const Header = () => {
                 text="Go To Chat"
                 textColor="black"
               />
+ <NavigationLink
+                bg="#51538f"
+                textColor="white"
+                to="/"
+                text="logout"
+                onClick={auth.logout}
+              />
+            </>
+          ) : (
+            <>
+              <NavigationLink
+                bg="#26c6da"
+                to="/login"
+                text="Login"
+                textColor="black"
+              />
+              <NavigationLink
+                bg="#00796b"
+                textColor="white"
+                to="/signup"
+                text="Signup"
+              />
+            </>
+          )}
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
+};
