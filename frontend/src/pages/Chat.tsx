@@ -43,3 +43,40 @@ const Chat = () => {
       toast.error("Deleting chats failed", { id: "deletechats" });
     }
   };
+  useLayoutEffect(() => {
+    if (auth?.isLoggedIn && auth.user) {
+      toast.loading("Loading Chats", { id: "loadchats" });
+      getUserChats()
+        .then((data) => {
+          setChatMessages([...data.chats]);
+          toast.success("Successfully loaded chats", { id: "loadchats" });
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("Loading Failed", { id: "loadchats" });
+        });
+    }
+  }, [auth]);
+  useEffect(() => {
+    if (!auth?.user) {
+      return navigate("/login");
+    }
+  }, [auth]);
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flex: 1,
+        width: "100%",
+        height: "100%",
+        mt: 3,
+        gap: 3,
+      }}
+    >
+      <Box
+        sx={{
+          display: { md: "flex", xs: "none", sm: "none" },
+          flex: 0.2,
+          flexDirection: "column",
+        }}
+      >
