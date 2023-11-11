@@ -96,3 +96,8 @@ const ChatItem = ({
             )
           )}
       </Box>
+    </Box>
+  );
+};
+
+export default ChatItem;
