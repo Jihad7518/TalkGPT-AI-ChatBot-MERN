@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { IoIosLogIn } from "react-icons/io";
 import { Box, Typography, Button } from "@mui/material";
@@ -24,7 +23,7 @@ const Signup = () => {
       toast.error("Signing Up Failed", { id: "signup" });
     }
   };
- useEffect(() => {
+  useEffect(() => {
     if (auth?.user) {
       return navigate("/chat");
     }
@@ -60,7 +59,7 @@ const Signup = () => {
               justifyContent: "center",
             }}
           >
-           <Typography
+            <Typography
               variant="h4"
               textAlign="center"
               padding={2}
@@ -95,3 +94,6 @@ const Signup = () => {
       </Box>
     </Box>
   );
+};
+
+export default Signup;
