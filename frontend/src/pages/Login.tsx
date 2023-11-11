@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { IoIosLogIn } from "react-icons/io";
 import { Box, Typography, Button } from "@mui/material";
@@ -89,3 +88,10 @@ const Login = () => {
               Login
             </Button>
           </Box>
+        </form>
+      </Box>
+    </Box>
+  );
+};
+
+export default Login;
