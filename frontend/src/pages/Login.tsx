@@ -52,3 +52,40 @@ const Login = () => {
             border: "none",
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h4"
+              textAlign="center"
+              padding={2}
+              fontWeight={600}
+            >
+              Login
+            </Typography>
+            <CustomizedInput type="email" name="email" label="Email" />
+            <CustomizedInput type="password" name="password" label="Password" />
+            <Button
+              type="submit"
+              sx={{
+                px: 2,
+                py: 1,
+                mt: 2,
+                width: "400px",
+                borderRadius: 2,
+                bgcolor: "#00fffc",
+                color: "black",
+                ":hover": {
+                  bgcolor: "white",
+                  color: "black",
+                },
+              }}
+              endIcon={<IoIosLogIn />}
+            >
+              Login
+            </Button>
+          </Box>
