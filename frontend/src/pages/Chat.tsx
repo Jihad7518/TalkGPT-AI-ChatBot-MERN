@@ -129,3 +129,64 @@ const Chat = () => {
           </Button>
         </Box>
       </Box>
+     <Box
+        sx={{
+          display: "flex",
+          flex: { md: 0.8, xs: 1, sm: 1 },
+          flexDirection: "column",
+          px: 3,
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: "40px",
+            color: "white",
+            mb: 2,
+            mx: "auto",
+            fontWeight: "600",
+          }}
+        >
+          Model - GPT 3.5 Turbo
+        </Typography>
+        <Box
+          sx={{
+            width: "100%",
+            height: "60vh",
+            borderRadius: 3,
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column",
+            overflow: "scroll",
+            overflowX: "hidden",
+            overflowY: "auto",
+            scrollBehavior: "smooth",
+          }}
+        >
+          {chatMessages.map((chat, index) => (
+            //@ts-ignore
+            <ChatItem content={chat.content} role={chat.role} key={index} />
+          ))}
+        </Box>
+        <div
+          style={{
+            width: "100%",
+            borderRadius: 8,
+            backgroundColor: "rgb(17,27,39)",
+            display: "flex",
+            margin: "auto",
+          }}
+        >
+          {" "}
+          <input
+            ref={inputRef}
+            type="text"
+            style={{
+              width: "100%",
+              backgroundColor: "transparent",
+              padding: "30px",
+              border: "none",
+              outline: "none",
+              color: "white",
+              fontSize: "20px",
+            }}
+          />
