@@ -26,3 +26,30 @@ function isCodeBlock(str: string) {
   }
   return false;
 }
+const ChatItem = ({
+  content,
+  role,
+}: {
+  content: string;
+  role: "user" | "assistant";
+}) => {
+  const messageBlocks = extractCodeFromString(content);
+  const auth = useAuth();
+  return role == "assistant" ? (
+    <Box
+      sx={{
+        display: "flex",
+        p: 2,
+        bgcolor: "#004d5612",
+        gap: 2,
+        borderRadius: 2,
+        my: 1,
+      }}
+    >
+      <Avatar sx={{ ml: "0" }}>
+        <img src="openai.png" alt="openai" width={"30px"} />
+      </Avatar>
+      <Box>
+        {!messageBlocks && (
+          <Typography sx={{ fontSize: "20px" }}>{content}</Typography>
+        )}
