@@ -1,4 +1,3 @@
-
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Box, Avatar, Typography, Button, IconButton } from "@mui/material";
 import red from "@mui/material/colors/red";
@@ -80,7 +79,7 @@ const Chat = () => {
           flexDirection: "column",
         }}
       >
-       <Box
+        <Box
           sx={{
             display: "flex",
             width: "100%",
@@ -129,7 +128,7 @@ const Chat = () => {
           </Button>
         </Box>
       </Box>
-     <Box
+      <Box
         sx={{
           display: "flex",
           flex: { md: 0.8, xs: 1, sm: 1 },
@@ -190,3 +189,13 @@ const Chat = () => {
               fontSize: "20px",
             }}
           />
+          <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
+            <IoMdSend />
+          </IconButton>
+        </div>
+      </Box>
+    </Box>
+  );
+};
+
+export default Chat;
